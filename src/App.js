@@ -11,7 +11,7 @@ import Footer from './Components/Footer/Footer';
 import Ask from './Pages/AskQuestion/AskQuestion'
 import AnswerQuestion from './Pages/QuestionDetail/QuestionDetail';
 function App() {
-  const [userData, setUserData] = useContext(UserContext);
+  const [setUserData] = useContext(UserContext);
 
   const checkLoggedIn = async () => {
     let token = localStorage.getItem('auth-token');
@@ -40,7 +40,7 @@ function App() {
     });
     localStorage.setItem('auth-token', '');
   };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     checkLoggedIn();
   }, []);
